@@ -60,8 +60,348 @@ II Business Process
          - Untuk melakukan pembelian, Guest harus mendaftar atau masuk sebagai Customer
    
 III Database and Dataset  
+      Untuk detail dari table yang kami buat sebagai berikut
+
+   create table CUSTOMER_DATA (
+      customer_id INT,
+      first_name VARCHAR(50),
+      last_name VARCHAR(50),
+      email VARCHAR(50),
+      address VARCHAR(50),
+      postal_code VARCHAR(50),
+      phone VARCHAR(50),
+       PRIMARY KEY (customer_id)
+   );
+
+   create table PRODUCT_DETAILS (
+      product_id INT,
+      product_name VARCHAR(255),
+      product_price VARCHAR(50),
+      product_color VARCHAR(50),
+        PRIMARY KEY (product_id)
+   );
+
+   create table ORDER_DATA (
+      order_id INT,
+      customer_id INT,
+      product_id INT,
+      quantity INT,
+      email VARCHAR(50),
+      address VARCHAR(50),
+      country VARCHAR(50),
+      postal_code VARCHAR(50),
+      departure_time DATETIME,
+       FOREIGN KEY (customer_id) REFERENCES CUSTOMER_DATA(customer_id)
+   );
+
+
+   Lalu sample dataset yang kami buat adalah sebagai berikut
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (1, 'Taber', 'Boote', 'tboote0@trellian.com', '4 Talisman Trail', null, '+591 583 565 2257');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (2, 'Della', 'Baldoni', 'dbaldoni1@fda.gov', '80 Southridge Junction', null, '+675 681 405 3188');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (3, 'Antonella', 'McReynold', 'amcreynold2@oracle.com', '66300 Gale Junction', 'AD600', '+376 438 516 6519');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (4, 'Federica', 'Gronauer', 'fgronauer3@csmonitor.com', '03 Sloan Point', null, '+62 973 798 8568');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (5, 'Stace', 'Bolderson', 'sbolderson4@issuu.com', '19 Kipling Place', '1114', '+63 889 987 2712');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (6, 'Linoel', 'Pearch', 'lpearch5@unesco.org', '38035 Pine View Circle', null, '+244 710 977 4536');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (7, 'Vania', 'Brumpton', 'vbrumpton6@ca.gov', '06 Russell Road', null, '+58 601 355 9346');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (8, 'Bianca', 'Lahive', 'blahive7@elpais.com', '6954 Logan Plaza', '69395 CEDEX 03', '+33 594 840 2604');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (9, 'Gallagher', 'Juckes', 'gjuckes8@joomla.org', '74 Saint Paul Court', null, '+82 628 872 5386');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (10, 'Irita', 'Josuweit', 'ijosuweit9@apache.org', '6410 Harbort Street', '739 84', '+420 623 860 0510');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (11, 'Yance', 'Powell', 'ypowella@barnesandnoble.com', '20 Hovde Place', '18015', '+34 699 484 8064');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (12, 'Pedro', 'MacAndie', 'pmacandieb@cargocollective.com', '9950 Continental Pass', null, '+93 603 419 0909');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (13, 'Ardella', 'Walworth', 'awalworthc@t.co', '2 Ramsey Drive', '5140-279', '+351 616 922 2045');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (14, 'Richy', 'Carlin', 'rcarlind@xing.com', '23182 Bluejay Way', null, '+86 427 435 9265');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (15, 'Merola', 'Vanezis', 'mvanezise@discuz.net', '991 Myrtle Circle', null, '+380 436 938 0553');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (16, 'Gardener', 'Sparkwell', 'gsparkwellf@cbsnews.com', '5 Sachs Circle', '93-154', '+48 238 207 6607');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (17, 'Genia', 'De Domenico', 'gdedomenicog@yelp.com', '5 Crescent Oaks Circle', '99150-000', '+55 429 942 1268');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (18, 'Vale', 'Nolan', 'vnolanh@howstuffworks.com', '28726 Lakewood Hill', null, '+86 715 249 5541');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (19, 'Helen', 'Atcherley', 'hatcherleyi@ask.com', '270 Forster Alley', null, '+256 586 744 8235');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (20, 'Rois', 'Waggatt', 'rwaggattj@time.com', '4 Crescent Oaks Trail', null, '+86 960 472 4248');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (21, 'Anthia', 'Ceaser', 'aceaserk@reference.com', '91488 Stuart Plaza', '65-980', '+48 783 525 7403');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (22, 'Brittne', 'Huet', 'bhuetl@meetup.com', '60 Meadow Vale Terrace', null, '+86 877 495 0149');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (23, 'Alleen', 'People', 'apeoplem@51.la', '1 Packers Street', '85423-000', '+55 326 882 3537');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (24, 'Alvera', 'L''argent', 'alargentn@usgs.gov', '3 Sugar Pass', null, '+30 875 984 0294');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (25, 'Julita', 'Lukins', 'jlukinso@google.co.jp', '689 Milwaukee Avenue', '851 78', '+46 247 335 2666');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (26, 'Noelle', 'Helmke', 'nhelmkep@domainmarket.com', '75839 Bay Center', '150867', '+57 188 320 8665');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (27, 'Elna', 'Beaby', 'ebeabyq@flavors.me', '09078 Aberg Drive', '59762', '+52 661 571 0201');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (28, 'Ophelia', 'Platt', 'oplattr@networksolutions.com', '4 Ludington Crossing', '9213', '+54 276 481 6173');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (29, 'Gilda', 'Klaes', 'gklaess@surveymonkey.com', '74 Gerald Alley', null, '+86 738 403 7502');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (30, 'Tamma', 'D''Ambrogi', 'tdambrogit@thetimes.co.uk', '05993 Grayhawk Lane', '881 30', '+46 806 958 0220');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (31, 'Bernard', 'Martt', 'bmarttu@columbia.edu', '87234 Waubesa Street', '7916', '+61 464 587 4015');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (32, 'Gib', 'Normavell', 'gnormavellv@altervista.org', '3017 Huxley Crossing', null, '+86 556 167 8780');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (33, 'Carolee', 'Gaddas', 'cgaddasw@acquirethisname.com', '95881 Del Sol Lane', '169635', '+7 842 255 4523');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (34, 'Kliment', 'Hillborne', 'khillbornex@techcrunch.com', '369 Kim Point', null, '+86 873 855 9021');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (35, 'Cathlene', 'Matt', 'cmatty@weibo.com', '09 Laurel Avenue', null, '+51 540 203 7926');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (36, 'Frannie', 'Bielby', 'fbielbyz@dell.com', '204 Heffernan Circle', null, '+62 263 829 3573');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (37, 'Yves', 'Stronge', 'ystronge10@stanford.edu', '3330 Maple Lane', null, '+51 922 351 3337');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (38, 'Molly', 'Gribben', 'mgribben11@cpanel.net', '69 Kedzie Junction', '4730-264', '+351 365 195 0393');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (39, 'Sydney', 'Berriball', 'sberriball12@macromedia.com', '049 Banding Junction', '85950-000', '+55 454 568 0997');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (40, 'Dacy', 'Lowery', 'dlowery13@pagesperso-orange.fr', '9219 Annamark Junction', '8324', '+54 583 406 6579');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (41, 'Rita', 'Greenhow', 'rgreenhow14@economist.com', '012 Rusk Avenue', null, '+86 254 145 1686');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (42, 'Viviana', 'Sterman', 'vsterman15@wordpress.com', '6 Mayfield Drive', '400036', '+7 626 953 4346');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (43, 'Randee', 'Flucks', 'rflucks16@narod.ru', '505 Pawling Plaza', '989-2433', '+81 727 922 5573');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (44, 'Selestina', 'Djurdjevic', 'sdjurdjevic17@multiply.com', '62 Londonderry Drive', null, '+86 791 354 0588');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (45, 'Anneliese', 'Girhard', 'agirhard18@si.edu', '82749 Hanover Crossing', null, '+86 943 388 9690');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (46, 'Dreddy', 'Kirmond', 'dkirmond19@ow.ly', '4743 Quincy Alley', null, '+86 830 760 9385');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (47, 'Micah', 'Mara', 'mmara1a@hibu.com', '9110 Aberg Way', null, '+850 543 187 0190');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (48, 'Kevon', 'Yanyushkin', 'kyanyushkin1b@feedburner.com', '625 Briar Crest Trail', '2705-537', '+351 351 677 4759');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (49, 'Paquito', 'Ewer', 'pewer1c@lycos.com', '86390 Dovetail Crossing', '46-034', '+48 755 725 9228');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (50, 'Robinetta', 'O''Flynn', 'roflynn1d@army.mil', '221 Dorton Place', '62021', '+92 560 265 4358');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (51, 'Brian', 'Pine', 'bpine1e@biblegateway.com', '6 Redwing Circle', null, '+1 336 873 1181');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (52, 'Blanca', 'Lamps', 'blamps1f@goo.gl', '86723 Lyons Center', null, '+355 666 702 8678');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (53, 'Salomo', 'Jankovsky', 'sjankovsky1g@spiegel.de', '948 Miller Parkway', null, '+86 400 921 0928');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (54, 'Costa', 'Smylie', 'csmylie1h@cnbc.com', '1 Coleman Trail', '6050-107', '+351 917 361 6908');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (55, 'Bert', 'Tatam', 'btatam1i@is.gd', '4 Dryden Crossing', null, '+62 481 429 6549');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (56, 'Flori', 'Spurdon', 'fspurdon1j@twitter.com', '2 Reindahl Hill', null, '+261 834 816 5582');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (57, 'Garvy', 'Truckett', 'gtruckett1k@cisco.com', '459 Vernon Center', '281 44', '+420 760 379 6270');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (58, 'Gilles', 'Finlator', 'gfinlator1l@biblegateway.com', '7 Clove Alley', null, '+86 935 766 6703');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (59, 'Danielle', 'Newvell', 'dnewvell1m@whitehouse.gov', '10 Larry Park', null, '+855 399 592 0014');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (60, 'Major', 'Erasmus', 'merasmus1n@xrea.com', '111 Pearson Avenue', '392558', '+7 812 345 0647');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (61, 'Sena', 'Munt', 'smunt1o@elpais.com', '8790 Florence Avenue', null, '+62 813 810 3214');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (62, 'Reeba', 'Timmermann', 'rtimmermann1p@cnbc.com', '96336 Bartelt Alley', '58404 CEDEX', '+33 791 234 3491');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (63, 'Emily', 'Krimmer', 'ekrimmer1q@bizjournals.com', '4 Scott Street', '4336', '+63 558 409 3760');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (64, 'Dorise', 'Buckenhill', 'dbuckenhill1r@usgs.gov', '21 Ryan Circle', null, '+374 395 413 7413');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (65, 'Rodolfo', 'Croote', 'rcroote1s@amazonaws.com', '57 Becker Alley', null, '+977 145 691 2399');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (66, 'Doralyn', 'Kike', 'dkike1t@domainmarket.com', '510 Montana Center', '111 20', '+46 132 380 0731');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (67, 'Silvie', 'Drowsfield', 'sdrowsfield1u@flavors.me', '157 Scofield Pass', null, '+62 101 640 3288');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (68, 'Fanchon', 'Stormonth', 'fstormonth1v@angelfire.com', '1372 Norway Maple Plaza', null, '+86 527 365 1565');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (69, 'Sullivan', 'Chew', 'schew1w@craigslist.org', '7108 Packers Alley', null, '+51 788 878 6031');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (70, 'Towney', 'Ricardon', 'tricardon1x@google.com.au', '0551 Welch Terrace', null, '+7 443 706 5596');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (71, 'Phil', 'Edmeades', 'pedmeades1y@sohu.com', '319 Gale Park', null, '+86 730 758 8963');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (72, 'Granger', 'Hehl', 'ghehl1z@parallels.com', '7956 Onsgard Court', '23501', '+358 140 786 4407');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (73, 'Caria', 'Seivwright', 'cseivwright20@sakura.ne.jp', '5 Forest Crossing', '44720-000', '+55 646 716 4003');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (74, 'Debby', 'Clemenceau', 'dclemenceau21@feedburner.com', '41164 Bartelt Street', '8336', '+54 882 848 2101');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (75, 'Maegan', 'Koppes', 'mkoppes22@cpanel.net', '7342 Judy Drive', '4335', '+63 932 802 5525');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (76, 'Lorant', 'Quin', 'lquin23@virginia.edu', '5 Scott Road', '981 22', '+46 228 456 6921');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (77, 'Carmine', 'Channon', 'cchannon24@uol.com.br', '5148 David Pass', null, '+62 531 732 5001');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (78, 'Olly', 'Kydd', 'okydd25@google.com.hk', '449 Sutteridge Trail', null, '+86 975 961 2485');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (79, 'Gweneth', 'Bertie', 'gbertie26@tinypic.com', '5 Rowland Terrace', '6104', '+63 940 896 2860');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (80, 'Cesare', 'Muffett', 'cmuffett27@smugmug.com', '180 Morning Point', null, '+86 180 783 9367');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (81, 'Deanna', 'Kaiser', 'dkaiser28@spotify.com', '201 Old Shore Street', null, '+504 362 795 0894');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (82, 'Weidar', 'Torbard', 'wtorbard29@woothemes.com', '5 Marquette Hill', null, '+967 890 781 7864');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (83, 'Nola', 'Hanington', 'nhanington2a@cargocollective.com', '277 Welch Point', null, '+86 136 761 7978');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (84, 'May', 'Bartrum', 'mbartrum2b@mapy.cz', '69814 Talmadge Terrace', null, '+212 351 533 0753');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (85, 'Garrott', 'Daughton', 'gdaughton2c@paypal.com', '049 Mesta Point', '03016', '+502 699 415 7752');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (86, 'Nickey', 'Kinnoch', 'nkinnoch2d@tinyurl.com', '2602 Jenifer Park', '12021', '+502 452 249 4028');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (87, 'Mackenzie', 'Lambourn', 'mlambourn2e@jiathis.com', '125 Vahlen Street', null, '+86 832 375 4371');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (88, 'Jessie', 'Rolley', 'jrolley2f@sitemeter.com', '8354 Spenser Way', null, '+86 741 925 7081');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (89, 'Marlie', 'Bruty', 'mbruty2g@timesonline.co.uk', '804 Bluestem Terrace', null, '+86 572 589 5496');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (90, 'Constantin', 'Brogi', 'cbrogi2h@paypal.com', '065 Glendale Parkway', null, '+86 219 775 6308');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (91, 'Kalli', 'Mariot', 'kmariot2i@linkedin.com', '4913 Leroy Crossing', null, '+86 837 728 7625');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (92, 'Katharina', 'Baseggio', 'kbaseggio2j@skyrock.com', '469 Bashford Junction', null, '+82 492 726 1606');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (93, 'Rosina', 'Forton', 'rforton2k@friendfeed.com', '3 Michigan Terrace', '22204 CEDEX', '+33 320 485 5013');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (94, 'Florry', 'Guerin', 'fguerin2l@si.edu', '50 Troy Way', null, '+51 590 914 3674');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (95, 'Corie', 'Phillot', 'cphillot2m@amazon.co.jp', '6198 Schmedeman Lane', null, '+86 608 302 1307');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (96, 'Brandise', 'Oldknowe', 'boldknowe2n@i2i.jp', '5397 Tennyson Lane', '20601', '+506 890 861 0647');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (97, 'Guilbert', 'Enderlein', 'genderlein2o@newsvine.com', '30212 Mayfield Center', '38-480', '+48 202 642 0015');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (98, 'Yasmeen', 'Daen', 'ydaen2p@columbia.edu', '1 Fisk Point', null, '+86 463 545 3790');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (99, 'Westley', 'MacKimm', 'wmackimm2q@psu.edu', '72707 Leroy Place', '7142', '+64 609 930 6111');
+   insert into CUSTOMER_DATA (customer_id, first_name, last_name, email, address, postal_code, phone) values (100, 'Coreen', 'Bontein', 'cbontein2r@buzzfeed.com', '98053 Rieder Hill', '4485-518', '+351 623 734 5691');
+
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (1, 'Acetaminophen and Codeine Phosphate', '$10.34', 'Khaki');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (2, 'Antacid', '$962.92', 'Fuscia');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (3, 'Equaline hemorrhoidal cooling', '$427.26', 'Turquoise');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (4, 'Chestal Child Berry', '$250.16', 'Violet');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (5, 'Zyclara', '$359.71', 'Green');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (6, 'Fusilev', '$913.56', 'Blue');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (7, 'PROSOPIS JULIFLORA POLLEN', '$811.18', 'Green');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (8, 'SHISEIDO SHEER MATIFYING COMPACT (REFILL)', '$322.80', 'Crimson');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (9, 'Protonix', '$180.05', 'Violet');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (10, 'Sunscreen Creme SPF 37', '$142.80', 'Green');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (11, 'OXYGEN', '$40.30', 'Green');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (12, 'Allergy Multi-Symptom', '$735.54', 'Maroon');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (13, 'G-12', '$995.73', 'Orange');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (14, 'Mary Kay Tinted Moisturizer Sunscreen SPF 20 Beige 1 (Drug Facts)', '$611.58', 'Turquoise');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (15, 'Clonidine Hydrochloride', '$914.64', 'Yellow');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (16, 'Sweet Gum', '$216.53', 'Purple');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (17, 'Coppertone SPORT PRO SERIES', '$24.67', 'Mauv');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (18, 'TOURCIA BODY WASH', '$892.39', 'Mauv');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (19, 'Metoprolol succinate', '$94.63', 'Maroon');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (20, 'Phentermine Hydrochloride', '$31.82', 'Turquoise');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (21, 'Oxycodone and Acetaminophen', '$370.41', 'Teal');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (22, 'Levetiracetam', '$583.18', 'Indigo');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (23, 'Pleo Reb', '$548.76', 'Puce');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (24, 'Doxepin Hydrochloride', '$839.17', 'Khaki');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (25, 'Leader Antacid', '$550.11', 'Red');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (26, 'HELMINTHOSPORIUM SOLANI', '$262.73', 'Khaki');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (27, 'Niravam', '$717.89', 'Mauv');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (28, 'Herbion Naturals', '$442.75', 'Goldenrod');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (29, 'Oxygen', '$155.69', 'Mauv');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (30, 'Elcure Ato', '$298.51', 'Pink');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (31, 'Your Logo Here Bandage Aid', '$689.36', 'Blue');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (32, 'Purell Advanced Hand Sanitizer Refreshing Florals', '$698.13', 'Aquamarine');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (33, 'flu and severe cold and cough', '$429.46', 'Aquamarine');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (34, 'Bupropion Hydrochloride', '$656.46', 'Turquoise');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (35, 'Degree', '$157.54', 'Khaki');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (36, 'Promethazine Hydrochloride', '$262.20', 'Crimson');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (37, 'ARTHROTEC', '$716.15', 'Mauv');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (38, 'Magnesium carbonicum 6', '$212.12', 'Turquoise');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (39, 'Mucinex', '$355.68', 'Goldenrod');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (40, 'Help I have allergies', '$874.96', 'Teal');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (41, 'ARNICA MONTANA', '$723.07', 'Red');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (42, 'LISINOPRIL AND HYDROCHLOROTHIAZIDE', '$925.22', 'Crimson');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (43, 'Hyoscyamine Sulfate', '$126.26', 'Crimson');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (44, 'Neutrogena Healthy Skin Makeup', '$497.42', 'Fuscia');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (45, 'Colgate Total Zx Pro-Shield Plus Sensitive', '$489.32', 'Turquoise');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (46, 'EQUALINE MEDICATED WIPES', '$135.24', 'Purple');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (47, 'careone infants pain relief', '$321.32', 'Indigo');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (48, 'Amantadine Hydrochloride', '$894.51', 'Violet');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (49, 'Sulphur 30C', '$125.61', 'Puce');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (50, 'aspirin', '$887.90', 'Purple');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (51, 'TYLENOL with Codeine', '$246.79', 'Puce');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (52, 'TRIPLE ANTIBIOTIC', '$199.60', 'Fuscia');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (53, 'White Alder', '$838.16', 'Crimson');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (54, 'Azithromycin Dihydrate', '$470.98', 'Turquoise');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (55, 'Neo-Fradin', '$241.58', 'Orange');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (56, 'Muscle and Joint Pain Relief', '$597.79', 'Pink');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (57, 'OHUI SUN SCIENCE Perfect Sunblock black EX plus', '$516.42', 'Green');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (58, 'ERYTHROMYCIN Base Filmtab', '$883.13', 'Mauv');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (59, 'AMARYL', '$870.52', 'Teal');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (60, 'Heparin Sodium', '$774.20', 'Puce');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (61, 'Levetiracetam', '$951.92', 'Khaki');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (62, 'Mirtazapine', '$345.32', 'Red');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (63, 'TRISEPTIN', '$312.16', 'Violet');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (64, 'EYE - CATARACT', '$28.39', 'Yellow');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (65, 'American Beech', '$296.80', 'Pink');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (66, 'Aspirin', '$334.95', 'Yellow');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (67, 'SAPHRIS', '$899.18', 'Turquoise');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (68, 'Golden Dark Foundation SPF 15', '$808.96', 'Turquoise');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (69, 'Quetiapine fumarate', '$643.71', 'Aquamarine');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (70, 'Noxzema', '$486.99', 'Turquoise');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (71, 'PATADAY', '$721.21', 'Puce');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (72, 'Midodrine Hydrochloride', '$501.50', 'Teal');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (73, 'Caduet', '$507.47', 'Indigo');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (74, 'Montelukast Sodium', '$276.72', 'Khaki');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (75, 'Macaroon Antibacterial Foaming Hand Wash', '$637.88', 'Red');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (76, 'Sheep Sorrel', '$32.46', 'Aquamarine');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (77, 'Calcium Chloride', '$186.88', 'Yellow');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (78, 'Oxytocin', '$605.06', 'Fuscia');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (79, 'amlodipine besylate', '$874.84', 'Crimson');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (80, 'Chest Cold', '$529.48', 'Turquoise');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (81, 'FACE PROTECTOR', '$120.76', 'Green');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (82, 'Dicyclomine Hydrochloride', '$562.70', 'Aquamarine');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (83, 'Clonazepam', '$851.43', 'Maroon');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (84, 'Methylphenidate Hydrochloride', '$434.09', 'Khaki');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (85, 'La Roche Posay Laboratoire Dermatologique Anthelios SX Daily Moisturizing Sunscreen Broad Spectrum SPF 15', '$133.22', 'Violet');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (86, 'CVS Fast Acting Baby Teething', '$252.77', 'Mauv');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (87, 'Rat Epithelium', '$207.25', 'Fuscia');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (88, 'Alpet E2 Sanitizing Foam Soap', '$640.00', 'Khaki');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (89, 'XtraCare Deep Cleaning Astringent', '$164.31', 'Blue');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (90, 'Tiazac Extended Release', '$751.08', 'Turquoise');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (91, 'Equate Mucus ER', '$441.80', 'Indigo');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (92, 'DG health calcium antacid', '$663.15', 'Mauv');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (93, 'Glyset', '$279.53', 'Aquamarine');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (94, 'LORAZEPAM', '$294.82', 'Violet');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (95, 'Amlodipine besylate and Atorvastatin calcium', '$746.40', 'Blue');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (96, 'Oxycodone Hydrochloride', '$296.52', 'Orange');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (97, 'Nicotine', '$67.96', 'Violet');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (98, 'TERBUTALINE SULFATE', '$687.92', 'Mauv');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (99, 'risperidone', '$609.68', 'Indigo');
+   insert into PRODUCT_DETAILS (product_id, product_name, product_price, product_color) values (100, 'BabySpa Calming Relief Eczema', '$286.18', 'Aquamarine');
+
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (1, 1, 1, 392, 'echavrin0@samsung.com', 'Room 1698', 'Israel', null, '2022-09-17 10:22:38');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (2, 2, 2, 718, 'icollihole1@wikia.com', 'Apt 1222', 'Israel', null, '2022-03-12 10:31:21');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (3, 3, 3, 932, 'hdelaperrelle2@issuu.com', 'Apt 598', 'Israel', null, '2023-02-13 04:34:35');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (4, 4, 4, 295, 'agiffard3@google.it', '4th Floor', 'Israel', null, '2022-09-18 13:36:29');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (5, 5, 5, 158, 'npimm4@ucoz.ru', 'PO Box 50846', 'Israel', null, '2023-01-03 03:06:56');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (6, 6, 6, 127, 'dwookey5@java.com', 'Apt 1481', 'Israel', null, '2022-03-25 03:26:32');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (7, 7, 7, 792, 'pcasaroli6@newyorker.com', 'Room 1990', 'Israel', null, '2022-12-29 12:48:48');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (8, 8, 8, 593, 'kmcgriele7@aboutads.info', 'PO Box 16793', 'Israel', null, '2022-04-09 05:16:53');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (9, 9, 9, 851, 'sskett8@multiply.com', 'Suite 63', 'Israel', null, '2023-02-08 01:58:15');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (10, 10, 10, 101, 'bplanks9@goo.ne.jp', 'Suite 61', 'Israel', null, '2022-06-29 06:10:16');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (11, 11, 11, 464, 'spettia@51.la', '9th Floor', 'Israel', null, '2022-05-02 10:35:48');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (12, 12, 12, 882, 'aholsteinb@forbes.com', 'Apt 1873', 'Israel', null, '2022-08-29 00:48:24');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (13, 13, 13, 519, 'dchallengerc@twitter.com', 'Room 632', 'Israel', null, '2022-06-12 19:26:20');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (14, 14, 14, 778, 'ngeard@census.gov', 'PO Box 27933', 'Israel', null, '2022-09-07 08:11:55');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (15, 15, 15, 384, 'gbinkse@wired.com', 'Suite 50', 'Israel', null, '2022-05-12 01:57:57');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (16, 16, 16, 146, 'lmcgilmartinf@marriott.com', 'Apt 834', 'Israel', null, '2023-02-15 22:02:55');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (17, 17, 17, 296, 'dgitshamg@vk.com', 'PO Box 74526', 'Israel', null, '2022-06-22 05:34:28');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (18, 18, 18, 216, 'kdaskiewiczh@indiegogo.com', 'PO Box 45440', 'Israel', null, '2022-03-03 06:51:47');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (19, 19, 19, 412, 'miglesiasi@wsj.com', 'PO Box 29188', 'Israel', null, '2022-06-29 10:40:11');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (20, 20, 20, 392, 'lrandlesomej@blogs.com', 'Apt 637', 'Israel', null, '2022-11-06 12:19:03');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (21, 21, 21, 613, 'keadingtonk@sina.com.cn', 'Suite 26', 'Israel', null, '2022-08-21 06:15:17');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (22, 22, 22, 397, 'chillandl@buzzfeed.com', 'Suite 82', 'Israel', null, '2022-09-30 15:16:21');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (23, 23, 23, 471, 'gfacerm@mayoclinic.com', '19th Floor', 'Israel', null, '2022-10-27 22:22:17');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (24, 24, 24, 808, 'wlinfordn@multiply.com', 'Apt 916', 'Israel', null, '2022-04-28 16:27:32');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (25, 25, 25, 34, 'jgibkeo@bandcamp.com', 'Apt 61', 'Israel', null, '2022-10-29 23:56:22');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (26, 26, 26, 416, 'mquartermainp@princeton.edu', 'PO Box 39861', 'Israel', null, '2022-11-10 17:53:11');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (27, 27, 27, 695, 'fburgerq@blinklist.com', 'Apt 1836', 'Israel', null, '2022-08-04 16:24:52');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (28, 28, 28, 322, 'ngionettittir@usatoday.com', '9th Floor', 'Israel', null, '2022-10-12 18:32:53');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (29, 29, 29, 793, 'rsharrockss@netlog.com', 'Suite 19', 'Israel', null, '2022-10-31 19:20:19');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (30, 30, 30, 861, 'vweldent@unc.edu', 'Apt 818', 'Israel', null, '2022-03-13 17:34:52');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (31, 31, 31, 547, 'nhogbenu@indiegogo.com', 'PO Box 69318', 'Israel', null, '2022-05-23 20:04:25');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (32, 32, 32, 128, 'aaustwickv@engadget.com', 'PO Box 20068', 'Israel', null, '2022-11-29 23:48:05');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (33, 33, 33, 648, 'rsquibbsw@pcworld.com', 'Room 732', 'Israel', null, '2022-08-22 05:33:04');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (34, 34, 34, 960, 'adablex@wufoo.com', 'Apt 7', 'Israel', null, '2022-08-20 05:09:42');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (35, 35, 35, 904, 'myarkery@nifty.com', 'Suite 1', 'Israel', null, '2022-09-09 02:17:59');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (36, 36, 36, 895, 'emalbyz@networksolutions.com', 'Apt 72', 'Israel', null, '2022-05-02 09:36:02');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (37, 37, 37, 193, 'cmaus10@earthlink.net', 'PO Box 89462', 'Israel', null, '2022-10-16 04:04:44');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (38, 38, 38, 871, 'ldilworth11@apple.com', 'Apt 1854', 'Israel', null, '2022-09-22 23:42:11');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (39, 39, 39, 34, 'aoffill12@weebly.com', 'Room 1226', 'Israel', null, '2022-12-28 12:42:29');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (40, 40, 40, 912, 'ofaithfull13@gizmodo.com', 'Room 293', 'Israel', null, '2023-02-13 08:36:45');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (41, 41, 41, 371, 'csagar14@cnet.com', 'PO Box 69220', 'Israel', null, '2022-11-04 23:46:01');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (42, 42, 42, 872, 'arake15@a8.net', '20th Floor', 'Israel', null, '2022-03-29 11:17:15');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (43, 43, 43, 144, 'dgrishkov16@vinaora.com', 'Apt 1396', 'Israel', null, '2022-04-24 10:32:13');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (44, 44, 44, 387, 'cmillam17@unicef.org', 'Apt 1713', 'Israel', null, '2023-01-06 08:32:48');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (45, 45, 45, 824, 'njerrans18@mtv.com', 'Suite 13', 'Israel', null, '2023-02-15 17:26:10');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (46, 46, 46, 423, 'bhanmore19@zimbio.com', 'Suite 85', 'Israel', null, '2022-07-15 20:20:32');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (47, 47, 47, 807, 'wossulton1a@bloglovin.com', 'Suite 13', 'Israel', null, '2023-01-31 14:50:46');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (48, 48, 48, 602, 'mluxford1b@google.es', 'PO Box 47605', 'Israel', null, '2022-05-08 19:43:19');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (49, 49, 49, 33, 'rdybell1c@360.cn', 'Suite 77', 'Israel', null, '2023-01-02 22:46:16');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (50, 50, 50, 874, 'tbarnaclough1d@sakura.ne.jp', 'Apt 857', 'Israel', null, '2022-12-25 06:22:34');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (51, 51, 51, 744, 'tloreit1e@t-online.de', 'Room 1255', 'Israel', null, '2023-01-13 08:49:39');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (52, 52, 52, 189, 'rlumly1f@exblog.jp', 'Room 160', 'Israel', null, '2022-06-13 19:02:16');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (53, 53, 53, 724, 'ntours1g@example.com', 'Room 556', 'Israel', null, '2022-09-09 02:46:24');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (54, 54, 54, 299, 'mburgher1h@mozilla.org', 'Suite 52', 'Israel', null, '2023-01-03 17:44:06');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (55, 55, 55, 996, 'aomurtagh1i@mac.com', 'PO Box 35475', 'Israel', null, '2022-04-11 22:47:13');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (56, 56, 56, 131, 'vmandel1j@arstechnica.com', 'Apt 405', 'Israel', null, '2022-08-31 13:14:29');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (57, 57, 57, 270, 'bmcgiff1k@4shared.com', '1st Floor', 'Israel', null, '2022-08-05 15:10:48');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (58, 58, 58, 898, 'mcolliver1l@telegraph.co.uk', 'Suite 11', 'Israel', null, '2022-09-01 17:53:28');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (59, 59, 59, 337, 'rkanzler1m@utexas.edu', 'PO Box 30005', 'Israel', null, '2022-08-18 07:22:42');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (60, 60, 60, 959, 'pmcgrae1n@jiathis.com', 'Room 410', 'Israel', null, '2023-01-21 13:38:26');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (61, 61, 61, 521, 'jgoude1o@scribd.com', 'Room 1822', 'Israel', null, '2022-03-14 17:33:57');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (62, 62, 62, 958, 'gcoomes1p@ftc.gov', '19th Floor', 'Israel', null, '2023-01-18 04:46:00');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (63, 63, 63, 211, 'wburtenshaw1q@people.com.cn', 'Suite 39', 'Israel', null, '2022-07-02 06:03:07');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (64, 64, 64, 29, 'crosterne1r@diigo.com', 'PO Box 31012', 'Israel', null, '2022-10-01 20:32:58');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (65, 65, 65, 182, 'tbasler1s@columbia.edu', 'PO Box 35253', 'Israel', null, '2022-12-04 13:22:41');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (66, 66, 66, 802, 'cscuffham1t@blogger.com', '4th Floor', 'Israel', null, '2022-06-29 04:54:47');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (67, 67, 67, 830, 'aromanetti1u@google.es', 'Room 1042', 'Israel', null, '2022-07-26 14:36:36');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (68, 68, 68, 38, 'pguthrum1v@about.me', 'Apt 597', 'Israel', null, '2023-01-09 07:23:26');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (69, 69, 69, 30, 'mbernardini1w@illinois.edu', 'Apt 754', 'Israel', null, '2023-01-01 21:37:36');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (70, 70, 70, 981, 'cpeerless1x@deviantart.com', 'PO Box 59968', 'Israel', null, '2022-08-19 00:05:43');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (71, 71, 71, 70, 'ipuxley1y@themeforest.net', 'PO Box 84337', 'Israel', null, '2022-10-26 14:27:13');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (72, 72, 72, 630, 'ddibsdale1z@themeforest.net', '16th Floor', 'Israel', null, '2022-10-18 08:00:58');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (73, 73, 73, 114, 'gnetting20@dyndns.org', 'Suite 69', 'Israel', null, '2022-05-18 01:06:12');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (74, 74, 74, 613, 'aleyrroyd21@ezinearticles.com', 'Suite 53', 'Israel', null, '2022-06-23 18:44:14');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (75, 75, 75, 19, 'abransgrove22@drupal.org', 'Room 1263', 'Israel', null, '2022-11-14 18:32:38');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (76, 76, 76, 970, 'fyandell23@last.fm', 'Room 1141', 'Israel', null, '2022-11-21 06:55:06');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (77, 77, 77, 166, 'wkemitt24@fda.gov', 'Apt 494', 'Israel', null, '2022-11-18 20:29:23');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (78, 78, 78, 618, 'rmugglestone25@webeden.co.uk', 'PO Box 55616', 'Israel', null, '2022-10-04 02:25:20');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (79, 79, 79, 50, 'lammer26@jalbum.net', 'Apt 1175', 'Israel', null, '2022-03-27 20:00:56');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (80, 80, 80, 146, 'mhabishaw27@mozilla.org', '13th Floor', 'Israel', null, '2022-04-20 23:24:49');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (81, 81, 81, 312, 'lschukraft28@twitter.com', '19th Floor', 'Israel', null, '2022-06-03 16:22:54');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (82, 82, 82, 806, 'tfreeberne29@example.com', '17th Floor', 'Israel', null, '2022-11-14 02:44:48');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (83, 83, 83, 131, 'imcduall2a@ucoz.com', '18th Floor', 'Israel', null, '2022-09-04 23:14:26');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (84, 84, 84, 892, 'nimesen2b@digg.com', 'PO Box 30617', 'Israel', null, '2022-12-15 21:04:41');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (85, 85, 85, 75, 'jgluyas2c@census.gov', 'Room 1427', 'Israel', null, '2022-12-25 03:21:34');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (86, 86, 86, 559, 'cbronger2d@digg.com', '6th Floor', 'Israel', null, '2023-02-19 08:49:02');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (87, 87, 87, 879, 'fbeven2e@cocolog-nifty.com', 'PO Box 46199', 'Israel', null, '2022-05-16 09:39:11');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (88, 88, 88, 324, 'tzorzini2f@yellowbook.com', 'Suite 76', 'Israel', null, '2022-10-17 12:43:43');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (89, 89, 89, 785, 'gkinnie2g@dailymail.co.uk', 'Suite 75', 'Israel', null, '2022-11-01 00:46:31');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (90, 90, 90, 864, 'kyeandel2h@rediff.com', 'PO Box 65837', 'Israel', null, '2022-05-26 01:31:26');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (91, 91, 91, 73, 'edwerryhouse2i@cam.ac.uk', 'Apt 1798', 'Israel', null, '2022-10-28 01:48:02');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (92, 92, 92, 46, 'tlovemore2j@seesaa.net', 'PO Box 40638', 'Israel', null, '2023-01-29 14:00:57');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (93, 93, 93, 783, 'mcholmondeley2k@abc.net.au', 'Apt 1912', 'Israel', null, '2023-02-20 04:47:22');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (94, 94, 94, 242, 'zmapes2l@bbb.org', '18th Floor', 'Israel', null, '2022-02-27 16:32:56');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (95, 95, 95, 887, 'abatchelder2m@wikispaces.com', 'Room 214', 'Israel', null, '2022-10-01 19:32:13');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (96, 96, 96, 779, 'fnesbeth2n@meetup.com', 'PO Box 41412', 'Israel', null, '2022-05-15 03:35:35');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (97, 97, 97, 76, 'wgouny2o@squarespace.com', '3rd Floor', 'Israel', null, '2022-09-12 15:15:45');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (98, 98, 98, 98, 'rowenson2p@ucoz.ru', 'PO Box 94111', 'Israel', null, '2022-07-11 23:54:48');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (99, 99, 99, 207, 'pquadrio2q@amazon.com', 'Room 131', 'Israel', null, '2022-07-30 00:30:33');
+   insert into ORDER_DATA (order_id, customer_id, product_id, quantity , email, address, country, postal_code, departure_time) values (100, 100, 100, 805, 'grisby2r@devhub.com', '15th Floor', 'Israel', null, '2022-11-01 06:02:03');
+   
+   
    - ERD/EER relation between Tables
-   - detail each table, such as product, customer, order, payment,      
+   - detail each table, such as product, customer, order, payment, 
    - sample dataset form each table 
    - link of your dump of data sql file that I can access (import) 
 

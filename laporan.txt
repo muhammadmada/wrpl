@@ -1,30 +1,111 @@
-1. User: Admin
-   Role: Sebagai pengelola aplikasi e-shopping, Admin bertanggung jawab untuk mengawasi semua aspek aplikasi. Tugas-tugas utama meliputi:
-   - Mengelola daftar produk, kategori, dan harga
-   - Mengawasi pesanan dan memastikan penyelesaian yang tepat waktu
-   - Mengelola akun pengguna, termasuk Seller, Customer, dan Guest
-   - Menangani permintaan dukungan pelanggan dan penyelesaian sengketa
-   - Mengawasi keamanan aplikasi dan melindungi data pengguna
+COVER (project name, team, etc)
+I Introduction 
 
-2. User: Seller
-   Role: Seller adalah satu-satunya penjual dalam aplikasi e-shopping ini. Tanggung jawab utama meliputi:
-   - Menambahkan, mengedit, dan menghapus produk beserta deskripsi dan gambar
-   - Mengelola stok produk dan memastikan ketersediaan
-   - Memproses pesanan, termasuk konfirmasi, pengepakan, dan pengiriman
-   - Mengelola pengiriman, termasuk memilih kurir dan mengatur biaya pengiriman
-   - Menanggapi pertanyaan dan keluhan pelanggan
+II Business Process
+   - Bussines Flow Diagram
+      1. Registrasi/Pendaftaran: Pengguna mendaftar atau masuk ke aplikasi dengan mengisi informasi pribadi dan kontak.
 
-3. User: Customer
-   Role: Customer adalah pengguna yang melakukan pembelian dalam aplikasi e-shopping. Aktivitas utama meliputi:
-   - Mencari dan melihat produk berdasarkan kategori atau kata kunci
-   - Menambahkan produk ke keranjang belanja dan mengelola keranjang
-   - Melakukan pembayaran menggunakan metode yang tersedia
-   - Melacak status pesanan dan pengiriman
-   - Memberikan ulasan dan peringkat produk setelah menerima pesanan
+      2. Cari Produk: Pengguna mencari produk dengan menggunakan kata kunci, kategori, atau filter.
 
-4. User: Guest
-   Role: Guest adalah pengunjung yang belum mendaftar atau masuk ke aplikasi e-shopping. Akses terbatas meliputi:
-   - Melihat produk, deskripsi, gambar, dan harga
-   - Membaca ulasan dan peringkat produk
-   - Mengakses informasi aplikasi, seperti kebijakan pengiriman dan pengembalian
-   - Untuk melakukan pembelian, Guest harus mendaftar atau masuk sebagai Customer
+      3. Lihat Detail Produk: Pengguna melihat informasi lengkap produk, seperti deskripsi, harga, dan ulasan.
+
+      4. Tambah ke Keranjang: Pengguna menambahkan produk yang diinginkan ke keranjang belanja.
+
+      5. Checkout: Pengguna meninjau pesanan, memilih metode pengiriman, dan mengisi alamat pengiriman.
+
+      6. Pembayaran: Pengguna memilih metode pembayaran (kartu kredit, transfer bank, dll.) dan menyelesaikan transaksi.
+
+      7. Konfirmasi Pesanan: Aplikasi mengirimkan konfirmasi pesanan melalui email atau notifikasi.
+
+      8. Pengiriman: Penjual mengemas produk dan mengirimkannya melalui kurir yang dipilih.
+
+      9. Pelacakan Pesanan: Pengguna melacak status pengiriman melalui aplikasi atau situs web kurir.
+
+      10. Terima Pesanan: Pengguna menerima pesanan dan memeriksa kualitas produk.
+
+      11. Ulasan dan Rating: Pengguna memberikan ulasan dan rating untuk produk dan penjual.
+
+      12. Layanan Pelanggan: Jika ada masalah, pengguna menghubungi layanan pelanggan untuk dukungan atau pengembalian produk.
+      
+   - User and Roles
+      1. Admin
+         Role: Sebagai pengelola aplikasi e-shopping, Admin bertanggung jawab untuk mengawasi semua aspek aplikasi. Tugas-tugas utama meliputi:
+         - Mengelola daftar produk, kategori, dan harga
+         - Mengawasi pesanan dan memastikan penyelesaian yang tepat waktu
+         - Mengelola akun pengguna, termasuk Seller, Customer, dan Guest
+         - Menangani permintaan dukungan pelanggan dan penyelesaian sengketa
+         - Mengawasi keamanan aplikasi dan melindungi data pengguna
+
+      2. Seller
+         Role: Seller adalah satu-satunya penjual dalam aplikasi e-shopping ini. Tanggung jawab utama meliputi:
+         - Menambahkan, mengedit, dan menghapus produk beserta deskripsi dan gambar
+         - Mengelola stok produk dan memastikan ketersediaan
+         - Memproses pesanan, termasuk konfirmasi, pengepakan, dan pengiriman
+         - Mengelola pengiriman, termasuk memilih kurir dan mengatur biaya pengiriman
+         - Menanggapi pertanyaan dan keluhan pelanggan
+
+      3. Customer
+         Role: Customer adalah pengguna yang melakukan pembelian dalam aplikasi e-shopping. Aktivitas utama meliputi:
+         - Mencari dan melihat produk berdasarkan kategori atau kata kunci
+         - Menambahkan produk ke keranjang belanja dan mengelola keranjang
+         - Melakukan pembayaran menggunakan metode yang tersedia
+         - Melacak status pesanan dan pengiriman
+         - Memberikan ulasan dan peringkat produk setelah menerima pesanan
+
+      4. Guest
+         Role: Guest adalah pengunjung yang belum mendaftar atau masuk ke aplikasi e-shopping. Akses terbatas meliputi:
+         - Melihat produk, deskripsi, gambar, dan harga
+         - Membaca ulasan dan peringkat produk
+         - Mengakses informasi aplikasi, seperti kebijakan pengiriman dan pengembalian
+         - Untuk melakukan pembelian, Guest harus mendaftar atau masuk sebagai Customer
+   
+III Database and Dataset  
+   - ERD/EER relation between Tables
+   - detail each table, such as product, customer, order, payment,      
+   - sample dataset form each table 
+   - link of your dump of data sql file that I can access (import) 
+
+IV Features and functional Processes  
+   - List of feature/function & Description  
+   - list of store procedure & Description 
+   - Detail each of Store Procedure and capture sample results
+
+V UI/UX 
+   such as :
+   - overall wireframe 
+   - main menu 
+   - user registers 
+   - Searching product 
+   - List of Product * Stock
+   - (making) chart/order list   
+   - (making) Payment
+   - Report top 10 Best Seles products   
+ 
+VI Prototypes/testing
+ 
+   1. Home page Landing page
+      Capturing main menu & Source Code/sql/store procedure related  
+
+   2. Customer Feature 
+      Capturing user/buyer registration  & Source Code/sql/store procedure related- 
+
+   3. Product  & Service  feature 
+      Customer view 
+      - Capturing list product data & Source Code/sql/store procedure related
+      - Capturing detail a product data & Source Code/sql/store procedure related
+
+      Admin view 
+      - Capturing list product data & Source Code/sql/store procedure related
+      - Capturing detail a product data & Source Code/sql/store procedure related
+      - Capturing add/del/update a product/price/discount  &   Source Code/sql/store procedure related
+
+   4. Ordering Product (Chart) and payment feature (user view)   
+      - Capturing search product data & Source Code/sql/store procedure related
+      - Capturing search result of product data & Source Code/sql/store procedure related
+      - Capturing add/del/update/cancel  a product/price/discount  &  Source Code/sql/store procedure related
+
+   5. Payment Order Product & Payment feature (admin view)   
+      - Capturing search order product data & Source Code/sql/store procedure related
+      - Capturing search order result of product data & Source Code/sql/store procedure related
+      - Capturing add/del/update/cancel  an order product/price/discount  &  Source Code/sql/store procedure related
+

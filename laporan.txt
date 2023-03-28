@@ -1,1 +1,30 @@
+1. User: Admin
+   Role: Sebagai pengelola aplikasi e-shopping, Admin bertanggung jawab untuk mengawasi semua aspek aplikasi. Tugas-tugas utama meliputi:
+   - Mengelola daftar produk, kategori, dan harga
+   - Mengawasi pesanan dan memastikan penyelesaian yang tepat waktu
+   - Mengelola akun pengguna, termasuk Seller, Customer, dan Guest
+   - Menangani permintaan dukungan pelanggan dan penyelesaian sengketa
+   - Mengawasi keamanan aplikasi dan melindungi data pengguna
 
+2. User: Seller
+   Role: Seller adalah satu-satunya penjual dalam aplikasi e-shopping ini. Tanggung jawab utama meliputi:
+   - Menambahkan, mengedit, dan menghapus produk beserta deskripsi dan gambar
+   - Mengelola stok produk dan memastikan ketersediaan
+   - Memproses pesanan, termasuk konfirmasi, pengepakan, dan pengiriman
+   - Mengelola pengiriman, termasuk memilih kurir dan mengatur biaya pengiriman
+   - Menanggapi pertanyaan dan keluhan pelanggan
+
+3. User: Customer
+   Role: Customer adalah pengguna yang melakukan pembelian dalam aplikasi e-shopping. Aktivitas utama meliputi:
+   - Mencari dan melihat produk berdasarkan kategori atau kata kunci
+   - Menambahkan produk ke keranjang belanja dan mengelola keranjang
+   - Melakukan pembayaran menggunakan metode yang tersedia
+   - Melacak status pesanan dan pengiriman
+   - Memberikan ulasan dan peringkat produk setelah menerima pesanan
+
+4. User: Guest
+   Role: Guest adalah pengunjung yang belum mendaftar atau masuk ke aplikasi e-shopping. Akses terbatas meliputi:
+   - Melihat produk, deskripsi, gambar, dan harga
+   - Membaca ulasan dan peringkat produk
+   - Mengakses informasi aplikasi, seperti kebijakan pengiriman dan pengembalian
+   - Untuk melakukan pembelian, Guest harus mendaftar atau masuk sebagai Customer

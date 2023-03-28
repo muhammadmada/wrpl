@@ -408,6 +408,14 @@ III Database and Dataset
 IV Features and functional Processes  
    - List of feature/function & Description  
    - list of store procedure & Description 
+   1. Create a function to calculate the total price of an order:
+
+   To use the function and stored procedure, you can run the following queries:
+
+   3. Create a function to retrieve customer's total spent:
+
+   4. Create a stored procedure to update a customer's email:
+
    - Detail each of Store Procedure and capture sample results
 
 V UI/UX 

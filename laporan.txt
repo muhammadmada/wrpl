@@ -2,7 +2,7 @@ COVER (project name, team, etc)
 I Introduction 
 
 II Business Process
-   - Bussines Flow Diagram
+   - Business Flow Diagram
       1. Registrasi/Pendaftaran: Pengguna mendaftar atau masuk ke aplikasi dengan mengisi informasi pribadi dan kontak.
 
       2. Cari Produk: Pengguna mencari produk dengan menggunakan kata kunci, kategori, atau filter.
@@ -407,6 +407,18 @@ III Database and Dataset
 
 IV Features and functional Processes  
    - List of feature/function & Description  
+      Sign In
+      Fitur ini memungkinkan customer untuk membuat akun dan mengelola profil.
+      
+      Pencarian
+      Fitur ini memungkinkan customer untuk mencari produk yang customer inginkan
+      
+      Daftar Produk
+      Fitur ini memungkinkan customer untuk melihat produk yang tersedia
+      
+      Pembayaran
+      Fitur ini memungkinkan
+      
    - list of store procedure & Description 
    1. Create a function to calculate the total price of an order:
 

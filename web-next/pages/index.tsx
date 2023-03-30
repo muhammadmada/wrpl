@@ -8,6 +8,9 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   return (
     <>
+      <Head>
+        <title>Toko Obat Tok Abah</title>
+      </Head>
       <h1 className={inter.className}>
         Hello World
       </h1>
